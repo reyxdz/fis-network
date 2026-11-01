@@ -51,10 +51,10 @@ export function Layout() {
             className="menu-toggle"
             aria-expanded={menuOpen}
             aria-controls="site-nav"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((open) => !open)}
           >
             <span className="menu-toggle-bars" aria-hidden="true" />
-            {menuOpen ? "Close" : "Menu"}
           </button>
           <nav id="site-nav" className="nav" aria-label="Pages">
             {links.map((link) => (
@@ -63,9 +63,9 @@ export function Layout() {
               </NavLink>
             ))}
           </nav>
-          <a className="call" href={`tel:${phones[0].tel}`}>
+          <a className="call" href={`tel:${phones[0].tel}`} aria-label={`Call ${phones[0].display}`}>
             <PhoneMark className="call-icon" />
-            Call
+            <span className="call-label">Call</span>
           </a>
         </div>
       </header>

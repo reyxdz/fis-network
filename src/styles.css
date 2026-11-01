@@ -213,6 +213,8 @@ a:hover { color: var(--blue-deep); }
   box-shadow: 0 4px 0 var(--yellow-deep);
 }
 
+.call-label { font-size: 1rem; }
+
 .call-icon {
   width: 1.05rem;
   height: 1.05rem;
@@ -222,15 +224,14 @@ a:hover { color: var(--blue-deep); }
 .menu-toggle {
   display: none;
   align-items: center;
-  gap: 0.45rem;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
   margin: 0;
   border: 0;
   background: rgb(255 255 255 / 10%);
   color: white;
-  font: inherit;
-  font-weight: 700;
-  font-size: 0.92rem;
-  padding: 0.55rem 0.8rem;
+  padding: 0;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -1140,18 +1141,20 @@ a:hover { color: var(--blue-deep); }
     grid-template-areas:
       "brand menu call"
       "nav nav nav";
-    gap: 0.55rem 0.5rem;
+    gap: 0.45rem 0.4rem;
     align-items: center;
     min-height: 0;
-    padding: 0.7rem 0;
+    padding: 0.55rem 0;
   }
 
   .brand {
     grid-area: brand;
     margin-right: 0;
     min-width: 0;
-    gap: 0.55rem;
+    gap: 0.45rem;
   }
+
+  .brand small { display: none; }
 
   .menu-toggle {
     display: inline-flex;
@@ -1174,20 +1177,28 @@ a:hover { color: var(--blue-deep); }
 
   .brand img,
   .foot-brand img {
-    width: 46px;
-    height: 46px;
-    border-radius: 11px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
     box-shadow: 0 0 0 2px var(--yellow);
   }
 
-  .brand strong { font-size: 1.35rem; }
-  .brand small { font-size: 0.82rem; }
+  .brand strong { font-size: 1.2rem; }
 
   .call {
-    padding: 0.55rem 0.75rem;
-    font-size: 0.88rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
     box-shadow: 0 3px 0 var(--yellow-deep);
-    max-width: 100%;
+  }
+
+  .call-label { display: none; }
+
+  .call .call-icon {
+    width: 1.15rem;
+    height: 1.15rem;
   }
 
   .nav a {
@@ -1203,7 +1214,7 @@ a:hover { color: var(--blue-deep); }
     border-radius: 12px;
   }
 
-  :root { --top-h: 5.1rem; }
+  :root { --top-h: 4.35rem; }
 
   .hero { padding: calc(var(--top-h) + 0.75rem) 0 2rem; }
   .band { padding: 1.8rem 0 1.7rem; }
